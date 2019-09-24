@@ -35,3 +35,32 @@ body{
     font-size: 0.8em;
     margin-top: 14px;
 }
+.returnSection{
+    width: calc(90% - 20px);
+    padding: 10px;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+    font-family: 'Verdana',sans-serif;
+}
+.button{
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Oswald',sans-serif;
+    display: block;
+    cursor: pointer;
+    transition: filter 0.4s;
+    min-width: 100px;
+}
+button[class="button"]:hover, button[class="button clip-button"]:hover{
+    filter: brightness(70%);
+}
+button[class="button"]:focus{
+    outline: none;
+}

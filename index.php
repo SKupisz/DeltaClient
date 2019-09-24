@@ -1,9 +1,9 @@
 <?php
     if(isset($_POST["access-key"]) && isset($_POST["cypher-content"])){
         $content = $_POST["cypher-content"];
+        $content = rawurlencode($content);
         $content = htmlentities($content);
-        $content = preg_replace("/\s+/","%20",$content);
-        $askQuery = "http://localhost/delta/deltaApiCenter/api.php?method=mate&a={$_POST['access-key']}&c={$content}";
+        $askQuery = "localhost/delta/deltaApiCenter/api.php?method=mate&a={$_POST['access-key']}&c={$content}";
         $toDo = curl_init($askQuery);
         curl_setopt($toDo,CURLOPT_RETURNTRANSFER,true);
         $result = curl_exec($toDo);
@@ -26,17 +26,25 @@
 <body>
     <header class = "welcome-header">Cyphering panel</header>
     <?php if($iscypher == 1){
-        ?><section class = "">Your message is: <?php echo $response; ?></section><?php
+        ?><section class = "returnSection">
+            <div class = "returnHeader">Your message is: </div>
+            <main class = "message-container"><?php echo $response; ?></main>
+            <nav class = "buttons-nav">
+                <button class = "button clip-button">Copy to clipboard</button>
+            </nav>
+            </section><?php
     }
     else{
         ?>
         <form method = "post" action = "">
             <input type = "text" class = "access-keyInp" name = "access-key" required placeholder = "Authorization key here"/>
             <textarea name = "cypher-content" class = "content-textarea" required placeholder = "Your message"></textarea>
-            <button type = "submit">Encrypt</button>
+            <button type = "submit" class = "button">Encrypt</button>
         </form>       
         <?php
     }?>
 
 </body>
+<script src = "./src/js/main.js"></script>
+
 </html>
