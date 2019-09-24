@@ -11,6 +11,10 @@ body{
     padding: 10px;
     margin-bottom: 7px;
 }
+.setup{
+    width: 100%;
+    text-align: center;
+}
 .access-keyInp{
     padding: 7px;
     font-size: 1em;
@@ -44,7 +48,11 @@ body{
     font-size: 1em;
     font-family: 'Verdana',sans-serif;
 }
-.button{
+.buttons-nav{
+    width: 100%;
+    text-align: center;
+}
+.button,.resetBtn,.Enbutton{
     padding: 15px;
     border: none;
     border-radius: 5px;
@@ -53,14 +61,59 @@ body{
     margin-left: auto;
     margin-right: auto;
     font-family: 'Oswald',sans-serif;
-    display: block;
+    display: inline-block;
     cursor: pointer;
     transition: filter 0.4s;
     min-width: 100px;
 }
-button[class="button"]:hover, button[class="button clip-button"]:hover{
+.Enbutton{
+    display: block;
+}
+button[class="button"]:hover, button[class="button clip-button"]:hover, 
+button[class="resetBtn"]:hover,button[class="Enbutton"]:hover{
     filter: brightness(70%);
 }
 button[class="button"]:focus{
     outline: none;
+}
+.entryptInp,.access-keyInp{
+    display: inline-block; 
+}
+.entryptInp{
+    width: 40px;
+    height: 40px;
+    color: #1999ff;
+    position: relative;
+    top: 10px;
+}
+input[type="checkbox"] {
+    background-color: #aaa;
+    cursor: pointer;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+input:checked[type="checkbox"]
+{
+  background: #aaa;
+}
+input[type="checkbox"]::before
+{
+  content: '';
+  width: 20px;
+  height: 39px;
+  background: #aaa;
+  position: absolute;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+input:checked[type="checkbox"]::before{
+  background: #111;
+  width: 40px;
+}
+.input-describe{
+    font-size: 1.7em;
+    font-family: 'Oswald' ,sans-serif;
+    margin-left: 10px;
 }

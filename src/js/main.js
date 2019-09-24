@@ -6,3 +6,6 @@ document.querySelector(".clip-button").addEventListener("click",function(){
     document.execCommand("copy");
     window.getSelection().removeAllRanges();
 });
+document.querySelector(".resetBtn").addEventListener("click",function(){
+    document.location.href = "",true;
+});
