@@ -88,7 +88,7 @@
         <form method = "post" action = "">
             <div class = "setup">
                 <input type = "text" class = "access-keyInp" name = "access-key" required placeholder = "Authorization key here"/>
-                 <label class = "input-describe">Cyphering/decoding</label><input type = "checkbox" checked name = "encryptOrdecrypt" class = "entryptInp"/>
+                 <label class = "input-describe">Cyphering </label><input type = "checkbox" checked name = "encryptOrdecrypt" class = "entryptInp"/><label class = "input-describe"> Decoding</label>
             </div>
             <textarea name = "cypher-content" class = "content-textarea" required placeholder = "Your message"></textarea>
             <button type = "submit" class = "Enbutton button">Encrypt</button>

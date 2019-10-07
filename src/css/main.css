@@ -91,7 +91,7 @@ input[type="checkbox"] {
     cursor: pointer;
     -webkit-appearance: none;
     outline: none;
-    border-radius: 10px;
+    border-radius: 5px;
     transition: all 0.5s;
 }
 input:checked[type="checkbox"]
@@ -103,14 +103,15 @@ input[type="checkbox"]::before
   content: '';
   width: 20px;
   height: 39px;
-  background: #aaa;
+  background: #111;
   position: absolute;
-  border-radius: 10px;
+  border-radius: 5px;
   transition: all 0.5s;
+  margin-left: 20px;
 }
 input:checked[type="checkbox"]::before{
   background: #111;
-  width: 40px;
+  margin-left: 0px;
 }
 .input-describe{
     font-size: 1.7em;
