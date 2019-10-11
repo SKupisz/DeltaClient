@@ -1,0 +1,48 @@
+.welcoming,.presentation{
+    width: 100%;
+    transition: all 1s;
+    display: block;
+}
+.closed-section{
+    width: 0px;
+    opacity: 0;
+    height: 0px;
+}
+.welcoming{
+    height: 100%;
+    background: url("../../img/Orion_Belt.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.welcoming *{
+    color: white;
+}
+.dissapear{
+    display: none;
+}
+.dissapear *{
+    display: none;
+}
+.present-header{
+    width: calc(100% - 20px);
+    text-align: center;
+    font-size: 2.4em;
+    font-family: 'Oswald',sans-serif;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.main-speech{
+    width: 70%;
+    float: left;
+    margin-left: 10%;
+    font-size: 1.3em;
+    font-family: 'Oswald',sans-serif;
+}
+.maybeTrial{
+    width: 60%;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}

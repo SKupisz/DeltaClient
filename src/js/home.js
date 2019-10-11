@@ -10,11 +10,23 @@ function sleep(milliseconds) {
 function startAnimation(){
     setTimeout("replacement(0)",500);
 }
+function loadFinalContent(){
+  document.querySelector(".welcoming").classList.add("closed-section");
+  setTimeout(function(){document.querySelector(".welcoming").classList.add("dissapear");},200);
+  document.querySelector(".presentation").classList.remove("closed-section");
+  setTimeout(function(){document.classList.remove("no-overflow");},100);
+}
+function exitLoader(){
+  document.querySelector(".welcome-container").classList.add("exit");
+  setTimeout(function(){
+    document.querySelector(".main-slide").classList.remove("exit");
+  },850);
+  setTimeout(function(){document.querySelector(".main-slide").classList.remove("blocked");},500);
+  setTimeout(function(){loadFinalContent()},3000);
+}
 function replacement(letter){
     if(letter == -1){
-      document.querySelector(".welcome-container").classList.add("exit");
-      setTimeout(function(){document.querySelector(".main-slide").classList.remove("exit");},850);
-      setTimeout(function(){})
+      exitLoader();
     }
     else{
       let forReplaceTable = [["%","$","@","W"],["A","!","8","E"],
