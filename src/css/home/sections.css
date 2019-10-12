@@ -4,12 +4,13 @@
     display: block;
 }
 .closed-section{
-    width: 0px;
     opacity: 0;
     height: 0px;
 }
 .welcoming{
     height: 100%;
+    background: white;
+    color: black;
     background: url("../../img/Orion_Belt.jpg");
     background-size: cover;
     position: absolute;
@@ -41,8 +42,48 @@
     font-family: 'Oswald',sans-serif;
 }
 .maybeTrial{
-    width: 60%;
+    width: calc(100% - 20px);
     float: left;
+    font-size: 1em;
+    font-family: 'Oswald',sans-serif;
+    padding: 10px;
+}
+.trial-header{
+    width: 100%;
+    text-align: center;
+    font-size: 2.1em;
+    margin-bottom: 20px;
+}
+.trial-desc{
+    text-align: center;
+    width: 90%;
+    display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 200px;
+}
+.hyperlinks{
+    width: calc(100% - 20px);
+    padding: 10px;
+    text-align: center;
+    display: block;
+}
+.hyperlinks a{
+    text-decoration: none;
+}
+.link-to{
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    background: blue;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    margin: 20px;
+    font-size: 2em;
+    font-family: 'Oswald',sans-serif;
+    transition: filter 0.4s;
+}
+button[class="link-to"]:hover{
+    filter: brightness(70%);
 }

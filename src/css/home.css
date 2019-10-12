@@ -13,6 +13,7 @@ body{
     display: block;
     position: fixed;
     transition: all 1s;
+    background: #aaa;
     background: url("https://apod.nasa.gov/apod/image/1910/2019-08-08-JMT19_1521-Pano-Edit_h600.jpg");
     background-size: cover;
 }

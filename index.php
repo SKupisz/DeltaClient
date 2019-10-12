@@ -31,6 +31,14 @@
                     It will not take a long time when you can be satistied with our security system protecting your data.
                 </article>
             </section>
+            <aside class = "hyperlinks">
+                <a href = "./about">
+                    <button class = "link-to">About us</button>
+                </a>
+                <a href = "./panel">
+                    <button class = "link-to">Cyphering panel</button>
+                </a>
+            </aside>
         </section>
     </div>
 </body>
