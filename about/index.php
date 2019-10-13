@@ -17,5 +17,14 @@
             However, the cyphering process is not fixed - we are still adding more and more calculus to that, becuase we believe this will make our cypher stronger.
         </article>
     </section>
+    <section class = "stuffSection" id = "red-path">
+        <header class = "stuff-header">Our stuff</header>
+        <figure class = "showing-profile ceo">
+        <img src = "../src/img/ceo.webp" alt = "Simon George Kupisz" class = "stuff-image"/>
+        <figcaption class = "stuff-name">Simon Kupisz - Founder and CEO</figcaption>
+        </figure>
+    </section>
 </body>
+<script src = "../src/jsLibrarys/particles.js"></script>
+<script src = "../src/js/about.js"></script>
 </html>

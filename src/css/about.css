@@ -5,10 +5,8 @@ body{
 }
 .basicInfoSection{
     width: 100%;
-    height: 100%;
-    position: absolute;
 }
-.welcome-header{
+.welcome-header,.stuff-header{
     width: calc(100% - 20px);
     text-align: center;
     font-size: 2em;
@@ -24,4 +22,28 @@ body{
     font-family: 'Oswald',sans-serif;
     margin-top: 30px;
     text-align: center;
+}
+.stuffSection{
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+#red-path{
+    height: 100px;
+}
+.showing-profile{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.stuff-image{
+    border-radius: 50%;
+    filter: brightness(80%);
+}
+.stuff-name{
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Lato',sans-serif;
+    margin-top: 7px;
 }
