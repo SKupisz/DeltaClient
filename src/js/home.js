@@ -14,7 +14,7 @@ function loadFinalContent(){
   document.querySelector(".welcoming").classList.add("closed-section");
   setTimeout(function(){document.querySelector(".welcoming").classList.add("dissapear");},200);
   document.querySelector(".presentation").classList.remove("closed-section");
-  setTimeout(function(){document.classList.remove("no-overflow");},100);
+  setTimeout(function(){document.querySelector("body").classList.remove("no-overflow");},100);
 }
 function exitLoader(){
   document.querySelector(".welcome-container").classList.add("exit");

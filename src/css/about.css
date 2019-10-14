@@ -47,3 +47,14 @@ body{
     font-family: 'Lato',sans-serif;
     margin-top: 7px;
 }
+@media screen and (max-width: 880px){
+    .stuffSection{
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 589px){
+    .short-desc{
+        font-size: 1em;
+        margin-top: 14px;
+    }
+}

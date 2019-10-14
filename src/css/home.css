@@ -3,6 +3,7 @@
 body{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 .no-overflow{
     overflow: hidden;
@@ -16,9 +17,10 @@ body{
     background: #aaa;
     background: url("https://apod.nasa.gov/apod/image/1910/2019-08-08-JMT19_1521-Pano-Edit_h600.jpg");
     background-size: cover;
+    background-position-x: center;
 }
 .welcome-header,.main-header{
-    width: 100%;
+    width: calc(100% - 20px);
     text-align: center;
     padding: 10px;
     margin-top: 100px;
@@ -66,4 +68,43 @@ body{
 }
 .final-item{
     text-align: center;
+}
+@media screen and (max-width: 790px){
+    .forTheReplace{
+        font-size: 2.8em;
+    }
+}
+@media screen and (max-width: 713px){
+    .describe-list{
+        width: calc(80% - 20px);
+    }
+    .final-item{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 698px){
+    .forTheReplace{
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 523px){
+    .forTheReplace{
+        font-size: 2.4em;
+    }
+}
+@media screen and (max-width: 493px){
+    .describe-list{
+        width: calc(100% - 20px);
+        text-align: center;
+    }
+}
+@media screen and (max-width: 428px){
+    .forTheReplace{
+        font-size: 1.2em;
+    }
+}
+@media screen and (max-width: 373px){
+    .main-header{
+        font-size: 3em;
+    }
 }
