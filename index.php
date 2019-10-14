@@ -1,102 +1,48 @@
-<?php
-    if(isset($_POST["access-key"]) && isset($_POST["cypher-content"])){
-        $content = $_POST["cypher-content"];
-        $content = rawurlencode($content);
-        //$content = htmlentities($content);
-        if(strlen($content) > 100){
-            $toComplete = "";
-            if(!isset($_POST["encryptOrdecrypt"])){
-                $alpha = explode("k",$content);
-                for($i = 0 ; $i < count($alpha); $i++){
-                    $nowPart = $alpha[$i];
-                    $askQuery = "localhost/delta/deltaApiCenter/api.php?method=friend&a={$_POST['access-key']}&c={$nowPart}";
-                    $toDo = curl_init($askQuery);
-                    curl_setopt($toDo,CURLOPT_RETURNTRANSFER,true);
-                    $result = curl_exec($toDo);
-                    $response = json_decode($result);
-                    $toComplete.=$response;
-                }
-            }
-            else{
-                for($i = 0 ; $i < strlen($content); $i+=100)
-                {
-                    $flag = 0;
-                  if($i + 100  < strlen($content))
-                  {
-                    $forNowText = substr($content,$i,100);
-                  }
-                  else {
-                    $forNowText = substr($content,$i,(strlen($content)-$i));
-                    $flag = 1;
-                  }
-                    $askQuery = "localhost/delta/deltaApiCenter/api.php?method=mate&a={$_POST['access-key']}&c={$forNowText}";
-                  $toDo = curl_init($askQuery);
-                  curl_setopt($toDo,CURLOPT_RETURNTRANSFER,true);
-                  $result = curl_exec($toDo);
-                  $response = json_decode($result);
-                  if($_POST["access-key"] && $flag == 0){
-                      $toComplete.=$response;
-                      $toComplete.="k";
-                  }
-                  //echo $response."<br>Completed: ".$toComplete."<br>";
-                }
-            }
-            $iscypher = 1;
-        }
-        else{
-            if(isset($_POST["encryptOrdecrypt"])){
-                $askQuery = "localhost/delta/deltaApiCenter/api.php?method=mate&a={$_POST['access-key']}&c={$content}";
-            }
-            else{
-                $askQuery = "localhost/delta/deltaApiCenter/api.php?method=friend&a={$_POST['access-key']}&c={$content}";
-            }
-            $toDo = curl_init($askQuery);
-            curl_setopt($toDo,CURLOPT_RETURNTRANSFER,true);
-            $result = curl_exec($toDo);
-            $toComplete = json_decode($result);
-            $iscypher = 1;
-        }
-
-    }
-    else{
-        $iscypher = 0;
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel = "stylesheet" href = "./src/css/main.css"/>
-    <title>Delta cipher</title>
+    <link rel = "stylesheet" href = "./src/css/home.css"/>
+    <link rel = "icon" href = "./src/img/logo2.png"/>
+    <title>The delta cypher</title>
 </head>
-<body>
-    <header class = "welcome-header">Cyphering panel</header>
-    <?php if($iscypher == 1){
-        ?><section class = "returnSection">
-            <div class = "returnHeader">Your message is: </div>
-            <main class = "message-container"><?php echo $toComplete; ?></main>
-            <nav class = "buttons-nav">
-                <button class = "button clip-button">Copy to clipboard</button>
-                <button type = "submit" class = "resetBtn">Go again</button>
-            </nav>
-            </section><?php
-    }
-    else{
-        ?>
-        <form method = "post" action = "">
-            <div class = "setup">
-                <input type = "text" class = "access-keyInp" name = "access-key" required placeholder = "Authorization key here"/>
-                 <label class = "input-describe">Cyphering </label><input type = "checkbox" checked name = "encryptOrdecrypt" class = "entryptInp"/><label class = "input-describe"> Decoding</label>
+<body onload = "startAnimation()" class = "no-overflow">
+    <?php require_once "./src/components/main/loading.php"; ?>
+    <div class = "main-slide blocked exit">
+        <section class = "welcoming">
+            <header class = "main-header">What is Delta?</header>
+            <div class = "describe-list">
+                <div class = "list-item first-item">- Is it a bird? - No!</div>
+                <div class = "list-item secont-item">- Is it a plane? - No!</div>
+                <div class = "list-item final-item">Then what is this?</div>
             </div>
-            <textarea name = "cypher-content" class = "content-textarea" required placeholder = "Your message"></textarea>
-            <button type = "submit" class = "Enbutton button">Encrypt</button>
-        </form>       
-        <?php
-    }?>
-
+        </section>
+        <section class = "presentation closed-section">
+            <header class = "present-header">Delta</header>
+            <main class = "main-speech">The delta cypher was created in order of protecting text data. For the last 9 months, we have been developing the cypher to make it as secure as possible.
+                And we can say - we did our best.
+            </main>
+            <section class = "maybeTrial">
+                <header class = "trial-header">Want to try?</header>
+                <article class = "trial-desc">
+                    No problem - just write to us on our email, and we will contact you as soon as possible.
+                    It will not take a long time when you can be satistied with our security system protecting your data.
+                </article>
+            </section>
+            <aside class = "hyperlinks">
+                <a href = "./about">
+                    <button class = "link-to">About us</button>
+                </a>
+                <a href = "./panel">
+                    <button class = "link-to">Cyphering panel</button>
+                </a>
+            </aside>
+        </section>
+    </div>
 </body>
-<script src = "./src/js/main.js"></script>
-
+<script src = "./src/jsLibrarys/particles.js"></script>
+<script src = "./src/js/app.js"></script>
+<script src = "./src/js/home.js"></script>
 </html>

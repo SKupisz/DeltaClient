@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+@import url("./home/sections.css");
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.no-overflow{
+    overflow: hidden;
+}
+.welcome-container{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: fixed;
+    transition: all 1s;
+    background: #aaa;
+    background: url("https://apod.nasa.gov/apod/image/1910/2019-08-08-JMT19_1521-Pano-Edit_h600.jpg");
+    background-size: cover;
+    background-position-x: center;
+}
+.welcome-header,.main-header{
+    width: calc(100% - 20px);
+    text-align: center;
+    padding: 10px;
+    margin-top: 100px;
+    background: transparent;
+}
+
+.forTheReplace{
+    font-size: 5em;
+    margin: 1px;
+    transition: all 1s;
+    display: inline-block;
+    font-family: 'Oswald',sans-serif;
+    background: transparent;
+}
+.exit{
+    height: 0px;
+    opacity: 0;
+}
+.blocked{
+    display: none;
+}
+.main-slide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px; left: 0px;
+    transition: all 1s;
+}
+.main-header{
+    font-size: 4em;
+    font-family: 'Oswald',sans-serif;
+}
+.describe-list{
+    width: calc(60% - 20px);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+    font-family: 'Oswald',sans-serif;
+}
+.first-item,.second-item,.final-item{
+    width: inherit;
+    display: block;
+    margin: 5px;
+}
+.final-item{
+    text-align: center;
+}
+@media screen and (max-width: 790px){
+    .forTheReplace{
+        font-size: 2.8em;
+    }
+}
+@media screen and (max-width: 713px){
+    .describe-list{
+        width: calc(80% - 20px);
+    }
+    .final-item{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 698px){
+    .forTheReplace{
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 523px){
+    .forTheReplace{
+        font-size: 2.4em;
+    }
+}
+@media screen and (max-width: 493px){
+    .describe-list{
+        width: calc(100% - 20px);
+        text-align: center;
+    }
+}
+@media screen and (max-width: 428px){
+    .forTheReplace{
+        font-size: 1.2em;
+    }
+}
+@media screen and (max-width: 373px){
+    .main-header{
+        font-size: 3em;
+    }
+}
