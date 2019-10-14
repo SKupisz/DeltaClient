@@ -45,7 +45,7 @@ body{
     margin: 5px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1em;
+    font-size: 1.2em;
     font-family: 'Verdana',sans-serif;
 }
 .buttons-nav{
@@ -70,7 +70,7 @@ body{
     display: block;
 }
 button[class="button"]:hover, button[class="button clip-button"]:hover, 
-button[class="resetBtn"]:hover,button[class="Enbutton"]:hover{
+button[class="resetBtn"]:hover,button[class="Enbutton button"]:hover{
     filter: brightness(70%);
 }
 button[class="button"]:focus{
@@ -117,4 +117,57 @@ input:checked[type="checkbox"]::before{
     font-size: 1.7em;
     font-family: 'Oswald' ,sans-serif;
     margin-left: 10px;
+}
+@media screen and (max-width: 993px){
+    .access-keyInp{
+        display: block;
+    }
+    .content-textarea{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 658px){
+    .access-keyInp{
+        width: 60%;
+    }
+    .content-textarea{
+        min-width: 70%;
+        max-width: 70%;
+    }
+    .Enbutton{
+        width: calc(40% - 20px);
+        margin-top: 20px;
+        padding: 20px;
+    }
+}
+@media screen and (max-width: 608px){
+    .returnSection{
+        text-align: center;
+    }
+    .buttons-nav{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 485px){
+    .content-textarea{
+        min-width: 85%;
+        max-width: 85%;
+    }
+    .Enbutton{
+        width: calc(60% - 20px);
+    }
+    .access-keyInp{
+        width: 80%;
+    }
+    .welcome-header{
+        font-size: 2.4em;
+    }
+    .input-describe{
+        font-size: 1.4em;
+    }
+}
+@media screen and (max-width: 421px){
+    .returnSection{
+        font-size: 1em;
+    }
 }
